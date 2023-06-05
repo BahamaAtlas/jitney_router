@@ -1,8 +1,8 @@
 import csv
 
-def create_bus_route_csvs(route):
+def create_bus_route_csvs(csv):
     #create index of routes
-    route_number_match = ['1', '1A', '2', '2A', '3', '3A', '4', '4A', '5', '5A', '6', '6A', '7', '7A', '8', '8A', '9', '9A', '9B', '10', '10A', '10B', '11', '11A', '12', '14', '14A', '15', '15A', '16', '16A', '16B', '17', '17A', '18', '19', '20', '21', '21A', '22', '22A', '23']   
+    route_number_match = ['1', '1A', '2', '2A', '3', '3A', '4', '4A', '5', '5A', '6', '6A', '7', '7A', '8', '8A', '9', '9A', '9B', '10', '10A', '10B', '11', '11A', '12', '14', '14A', '15', '15A', '16', '16A', '16B', '17', '17A', '18', '19', '20', '21', '21A', '22', '22A', '23'] 
     # Extract the service area
     service_area = route.split('\n')[0].strip()
     # Extract the route number and starting point
@@ -25,5 +25,7 @@ def create_bus_route_csvs(route):
     print(route)
 
 for i in range(0,42):
+    #open pdf
+    routes = pdf_text.split("ROUTE #")[1:]
     route = routes[i]
-    router_csv(route)
+    router_csv(csv)
